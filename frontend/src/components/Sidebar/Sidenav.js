@@ -4,9 +4,13 @@ import Expandicon from "../../lib/icons/Sidebaricons/Expandicon";
 import Expandiconback from "../../lib/icons/Sidebaricons/Expandiconback";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Sidenav() {
   const [Expanded, setExpanded] = useState(false);
+
+  const router = useRouter()
+  const currentRoute = router.pathname
 
   return (
     // Checking if sidebar is expanded and if so switch classes
@@ -24,16 +28,12 @@ export default function Sidenav() {
         </div>
         <div className="separator"></div>
         <div className="sidebarmiddle">
-          {navData.map(({ link, icon: Icon, title }, key) => {
+          {navData.map(({ href, icon: Icon, title }, key) => {
             return (
               <Link
-                href="/"
-                to={link}
+                href={href}
                 key={key}
-                className={({ isActive }) => {
-                  if (isActive) return "active-nav";
-                  return "inactive-nav";
-                }}
+                className= {currentRoute === {href} ? "active-nav" : "inactive-nav"}
                 end
               >
                 <div className="row">

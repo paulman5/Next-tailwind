@@ -10,31 +10,31 @@ import Logouticon from "./icons/Sidebaricons/Logouticon";
 export const navData = [
   {
     id: 1,
-    link: "/",
+    href: "/",
     title: "Home",
     icon: () => <Homeicon />,
   },
   {
     id: 2,
-    link: "/draft",
+    href: "/draft",
     title: "Draft",
     icon: () => <Drafticon />,
   },
   {
     id: 3,
-    link: "/cpq",
+    href: "/cpq",
     title: "Cpq",
     icon: () => <Cpqicon />,
   },
   {
     id: 4,
-    link: "/calendar",
+    href: "/calendar",
     title: "Calendar",
     icon: () => <Calendaricon />,
   },
   {
     id: 5,
-    link: "/invoice",
+    href: "/invoice",
     title: "Invoice",
     icon: () => <Invoiceicon />,
   },
